@@ -10,6 +10,7 @@ body {
   font-weight: 500;
 }
 
+/* allows content to stay centered on large screens*/
 #site_block{
     max-width: 1600px;
     margin-left: auto;
@@ -17,6 +18,7 @@ body {
     padding: 50px;
 }
 
+/* general flexbox for body, CV categories */
 .container{
     width: 100%;
     display: flex;
@@ -25,6 +27,7 @@ body {
     gap: 50px;
 }
 
+/* "lisere" - in french */
 #sidebar{
     min-width: 180px;
     max-width: 300px;
@@ -34,7 +37,7 @@ body {
     border-radius: 15px;
     opacity: .8;
 }
-
+/* separates sidebar from rest of page */
 #content{
     width: 100%;
     display: flex;
@@ -42,6 +45,7 @@ body {
     gap: 30px;
 }
 
+/* header - START */
 header{
     display: flex;
     align-items: center;
@@ -55,6 +59,30 @@ header{
     gap: 5px;
 }
 
+h1 {
+    font-family: "La Belle Aurore", "Lucida Handwriting", cursive;
+    font-size: 3.5em;
+    color:	#3048b5;
+    line-height: .8em;
+    margin: 0;
+    text-align: center;
+    text-indent: 40px;
+    text-shadow: 0px 0px 1px #3048b5;
+    white-space: nowrap;
+}
+
+h3{
+    font-size: 1.1em;
+    color:	#3550C9;
+    font-weight: 300;
+    text-shadow: 3px 2px 2px white;
+    margin: 0;
+    text-align: center;
+    text-indent: -290px;
+
+}
+
+/* separated from img to maintain border opacity */
 #img_frame{
     align-self: flex-end;
     width: 130px;
@@ -70,37 +98,18 @@ header{
    height: 100%;
    border-radius: 40px;
 }
+/* header - END */
 
+/* categories/CV - START */
 #CV{
     display: flex;
 }
 
+/* container for category lists */
 section{
     min-width:min-content;
     align-content: center;
     margin: 0;
-}
-
-h1 {
-    font-family: "La Belle Aurore", "Lucida Handwriting", cursive;
-    font-size: 3.5em;
-    color:	#3048b5;
-    line-height: .8em;
-    margin: 0;
-    text-align: center;
-    text-indent: 40px;
-    text-shadow: 0px 0px 1px #3048b5;
-}
-
-h3{
-    font-size: 1.1em;
-    color:	#3550C9;
-    font-weight: 300;
-    text-shadow: 3px 2px 2px white;
-    margin: 0;
-    text-align: center;
-    text-indent: -290px;
-
 }
 
 h2 {
@@ -117,7 +126,6 @@ h2 {
     padding: .3em .8em .2em .8em;
     box-shadow:inset 2px 2px 1px rgba(255, 255, 255, .3);
     border: 3px solid #3048b5;
-
 }
 
 li{
@@ -141,3 +149,35 @@ em{
     font-weight: 700;
     letter-spacing: .1em;
 }
+/* categories/CV - END */
+
+/* optimization for mobile devices below
+ - removal of sidebar and content aligned vertically */
+@media all and (max-device-width:480px){
+    #site_block{
+        max-width: 400px;
+    }
+
+    #sidebar{
+        display:none;
+    }
+    #content{
+        max-width: 420px;
+    }
+
+    header{
+        flex-direction: column;
+    }
+    #img_frame{
+        align-self: center;
+        margin: 40px auto -10px auto;
+    }
+
+    #CV{
+        flex-direction:column;
+        gap: 30px;
+    }
+}
+/* END OF CSS THANK YOU FOR READING */
+/* by Molly Felts Vallin */
+
